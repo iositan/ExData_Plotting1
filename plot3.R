@@ -18,6 +18,7 @@ names(date_time) <- c("date_time")
 df <- cbind(df,date_time)
 # Plot3
 # initial, first metter
+png(filename="plot3.png")
 par( mfrow = c(1,1), cex.lab=0.8)
 with(df, 
 plot(df$date_time,df$Sub_metering_1, type="l",
@@ -34,8 +35,9 @@ with(df,
 # add the legend
 legend("topright",  
        col = c("black","red","blue"), lty= c(1,1,1),
-       legend = c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))
+       legend = c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),
+       cex=0.8)
 
-dev.copy(png,file="plot3.png")
+#dev.copy(png,file="plot3.png")
 # closing the device
 dev.off()
